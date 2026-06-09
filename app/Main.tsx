@@ -3,57 +3,24 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
+import { destinations as travelDestinations } from '@/data/destinations'
 
 const MAX_DISPLAY = 5
-
-const travelDestinations = [
-  {
-    title: 'Paris, France',
-    description: 'Chic cafés, river strolls, and timeless museum moments in the city of lights.',
-    href: '/blog',
-  },
-  {
-    title: 'Kyoto, Japan',
-    description: 'Temple gardens, sakura trails, and peaceful tea houses for slow travel.',
-    href: '/blog',
-  },
-  {
-    title: 'Santorini, Greece',
-    description: 'Whitewashed cliffs, cobalt seas, and sunsets that feel made for travel stories.',
-    href: '/blog',
-  },
-  {
-    title: 'Bali, Indonesia',
-    description: 'Rainforest escapes, surf beaches, and rich island culture for curious travelers.',
-    href: '/blog',
-  },
-  {
-    title: 'New York, USA',
-    description: 'City energy, iconic landmarks, and endless neighborhoods to explore.',
-    href: '/blog',
-  },
-  {
-    title: 'Cape Town, South Africa',
-    description: 'Mountains, ocean drives, and vibrant markets that bring every trip alive.',
-    href: '/blog',
-  },
-]
 
 export default function Home({ posts }) {
   return (
     <>
       <section className="space-y-10 pb-12">
         <div className="space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-600 dark:text-primary-400">
+          <p className="text-primary-600 dark:text-primary-400 text-sm font-semibold tracking-[0.24em] uppercase">
             Destinations
           </p>
           <div className="space-y-4">
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
+            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100">
               Inspiring travel destinations for your next adventure
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-400">
-              Discover a curated travel grid of iconic places, each designed to spark your imagination
-              and guide the next chapter of your journey.
+              Discover a curated travel grid of iconic places, each designed to spark your imagination and guide the next chapter of your journey.
             </p>
           </div>
         </div>
@@ -62,22 +29,22 @@ export default function Home({ posts }) {
           {travelDestinations.map((destination) => (
             <article
               key={destination.title}
-              className="group overflow-hidden rounded-3xl border border-gray-200/70 bg-white/90 p-6 shadow-xl shadow-slate-900/5 transition duration-300 hover:-translate-y-1 hover:border-primary-500/40 dark:border-gray-700/70 dark:bg-slate-900/80 dark:shadow-none"
+              className="hover:border-primary-500/40 overflow-hidden rounded-3xl border border-gray-200/70 bg-white/90 p-6 shadow-xl shadow-slate-900/5 transition duration-300 hover:-translate-y-1 dark:border-gray-700/70 dark:bg-slate-900/80 dark:shadow-none"
             >
               <div className="space-y-4">
                 <div>
                   <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-white">
                     {destination.title}
                   </h2>
-                  <div className="mt-3 h-1.5 w-16 rounded-full bg-primary-500 transition-all duration-300 group-hover:w-24" />
+                  <div className="bg-primary-500 mt-3 h-1.5 w-16 rounded-full transition-all duration-300 group-hover:w-24" />
                 </div>
                 <p className="text-base leading-7 text-gray-600 dark:text-gray-400">
                   {destination.description}
                 </p>
                 <div>
                   <Link
-                    href={destination.href}
-                    className="inline-flex items-center text-sm font-semibold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                    href={`/destination/${destination.slug}`}
+                    className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 inline-flex items-center text-sm font-semibold"
                   >
                     Explore travel stories
                     <span aria-hidden="true" className="ml-2">
