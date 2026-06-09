@@ -77,6 +77,34 @@ module.exports = () => {
           protocol: 'https',
           hostname: 'picsum.photos',
         },
+        {
+          protocol: 'https',
+          hostname: 'upload.wikimedia.org',
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.parisdiscoveryguide.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.travelcaffeine.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.strogilisantorini.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'cdn.prod.website-files.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'roamingtheamericas.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.andbeyond.com',
+        },
       ],
       unoptimized,
     },
