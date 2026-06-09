@@ -20,7 +20,8 @@ export default function Home({ posts }) {
               Inspiring travel destinations for your next adventure
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-400">
-              Discover a curated travel grid of iconic places, each designed to spark your imagination and guide the next chapter of your journey.
+              Discover a curated travel grid of iconic places, each designed to spark your
+              imagination and guide the next chapter of your journey.
             </p>
           </div>
         </div>
