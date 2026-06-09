@@ -8,7 +8,8 @@ export const generateStaticParams = async () =>
     slug: destination.slug,
   }))
 
-export default function DestinationPage({ params }: { params: { slug: string } }) {
+export default async function DestinationPage(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params
   const destination = destinations.find((item) => item.slug === params.slug)
 
   if (!destination) {
