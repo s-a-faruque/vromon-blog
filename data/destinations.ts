@@ -5,7 +5,9 @@ export type Destination = {
   description: string
   overview: string
   highlights: string[]
+  thumbnail?: string
   image: string
+  galleryImages?: string[]
   imageCredit: string
   imageCreditUrl: string
   wikiUrl: string
@@ -27,6 +29,11 @@ export const destinations: Destination[] = [
     image:
       'https://www.parisdiscoveryguide.com/image-files/x1500-terrass-hotel-eiffel-tower-night-1x1.jpg.pagespeed.ic.aNYvUZHMJ8.jpg',
     imageCredit: 'Paris Discovery Guide',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1649265825072-f7dd6942baed?q=80&h=800&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1555212697-194d092e3b8f?q=80&h=800&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1555212697-194d092e3b8f?q=80&h=800&w=800&auto=format&fit=crop',
+    ],
     imageCreditUrl: 'https://www.parisdiscoveryguide.com/paris-skyline-views.html',
     wikiUrl: 'https://commons.wikimedia.org/wiki/Category:Paris',
   },
@@ -43,9 +50,14 @@ export const destinations: Destination[] = [
       'Explore the historic grounds and take in the panoramic views at the Citadel National Historic Site',
       'Take the iconic ferry across the harbor to Dartmouth for local shops and craft breweries',
     ],
-    image:
-      'https://commons.wikimedia.org/wiki/Halifax,_Nova_Scotia#/media/File:Halifaxnighttime.jpg',
+    thumbnail: 'halifax.jpg',
+    image: 'https://images.unsplash.com/photo-1565465685025-9b00dc77ad52',
     imageCredit: 'Wikimedia Commons',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1520106212299-d99c443e4568?auto=format&fit=crop&w=3000&q=80',
+      'https://images.unsplash.com/photo-1543872084-c7bd3822856f?auto=format&fit=crop&w=3000&q=80',
+      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=3000&q=80',
+    ],
     imageCreditUrl:
       'https://commons.wikimedia.org/wiki/File:Halifax_Waterfront_and_Skyline_from_Dartmouth_(53245464197).jpg',
     wikiUrl: 'https://commons.wikimedia.org/wiki/Category:Halifax,_Nova_Scotia',
@@ -66,6 +78,12 @@ export const destinations: Destination[] = [
       'https://www.travelcaffeine.com/wp-content/uploads/2014/12/Kiyomizudera-Temple-Sunset-Wooden-Pavilion-Overlook-copy.jpg',
     imageCredit: 'Travel Caffeine',
     imageCreditUrl: 'https://www.travelcaffeine.com/kiyomizudera-temple-kyoto-photos-tips/',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1742203752231-1a1f3fba65f6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1558862107-d49ef2a04d72?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVzaGltaSUyMGluYXJpfGVufDB8fDB8fHww',
+      'https://images.unsplash.com/photo-1637679105331-a0cea188b83e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2l5b21penUlMjBkZXJhJTIwdGVtcGxlfGVufDB8fDB8fHww',
+      'https://images.unsplash.com/photo-1745988267157-442463b05d2c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDMxfHx8ZW58MHx8fHx8',
+    ],
     wikiUrl: 'https://commons.wikimedia.org/wiki/Category:Kyoto',
   },
   {
@@ -84,6 +102,14 @@ export const destinations: Destination[] = [
       'https://www.strogilisantorini.com/blog/user/pages/01.home/02.caldera-santorini-greece/01-santorini-caldera-greece.jpg',
     imageCredit: 'Strogili Santorini',
     imageCreditUrl: 'https://www.strogilisantorini.com/blog/caldera-santorini-greece',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=3000&q=80',
+      'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=3000&q=80',
+      'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=3000&q=80',
+      'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=3000&q=80',
+      'https://images.unsplash.com/photo-1516934024742-b461fba47600?auto=format&fit=crop&w=3000&q=80',
+      'https://images.unsplash.com/photo-1557456170-0cf4f4d0d362?auto=format&fit=crop&w=3000&q=80',
+    ],
     wikiUrl: 'https://commons.wikimedia.org/wiki/Category:Santorini',
   },
   {
@@ -116,6 +142,7 @@ export const destinations: Destination[] = [
       'Explore museums on Museum Mile',
       'Experience vibrant neighborhoods across Manhattan and Brooklyn',
     ],
+    thumbnail: 'newyork.jpg',
     image:
       'https://roamingtheamericas.com/wp-content/uploads/2023/07/Brooklyn-Bridge-Park-NYC-W-6467-1024x683.jpg',
     imageCredit: 'Roaming the Americas',
@@ -139,5 +166,24 @@ export const destinations: Destination[] = [
     imageCreditUrl:
       'https://www.andbeyond.com/experiences/africa/south-africa/cape-town/private-city-tour/',
     wikiUrl: 'https://commons.wikimedia.org/wiki/Category:Cape_Town',
+  },
+  {
+    slug: 'wanaka',
+    title: 'Wanaka, New Zealand',
+    location: 'Otago, South Island, New Zealand',
+    description:
+      'Crystal-clear alpine lakes, soaring peaks, and a laid-back vibe that captures the heart of the Southern Alps.',
+    overview:
+      'Wanaka offers an unfiltered escape into New Zealand’s raw alpine beauty. Nestled on the shores of its namesake lake and framed by the dramatic peaks of Mount Aspiring National Park, it balances thrilling outdoor adventures like hiking and skiing with a relaxed, welcoming lakeside community.',
+    highlights: [
+      'Hike the iconic spine of Roys Peak for panoramic lake views',
+      'Photograph the resilient and world-famous \"That Wanaka Tree\" rising from the water',
+      'Explore the alpine trails, glaciers, and river valleys of Mount Aspiring National Park',
+    ],
+    image: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Wanaka.jpg',
+    imageCredit: 'Michal Klajban / Wikimedia Commons',
+    imageCreditUrl:
+      'https://commons.wikimedia.org/wiki/File:Northern_part_of_Lake_Wanaka_with_surrounding_mountains,_New_Zealand.jpg',
+    wikiUrl: 'https://commons.wikimedia.org/wiki/Category:Lake_W%C4%81naka',
   },
 ]

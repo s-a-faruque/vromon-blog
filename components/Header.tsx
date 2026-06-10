@@ -1,13 +1,14 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
+// import Logo from '@/data/vromon.svg'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
-import SearchButton from './SearchButton'
+// import SearchButton from './SearchButton'
+import Image from './Image'
 
 const Header = () => {
-  let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10'
+  let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
   }
@@ -15,15 +16,23 @@ const Header = () => {
   return (
     <header className={headerClass}>
       <Link href="/" aria-label={siteMetadata.headerTitle}>
-        <div className="flex items-center justify-between">
-          {/* <div className="mr-3">V</div> */}
-          {typeof siteMetadata.headerTitle === 'string' ? (
-            <div className="hidden h-6 text-2xl font-semibold sm:block">
-              {siteMetadata.headerTitle}
-            </div>
-          ) : (
-            siteMetadata.headerTitle
-          )}
+        <div className="flex h-30 items-center justify-between space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
+          <div className="mr-3 w-30 overflow-hidden">
+            <Image
+              width={200}
+              height={200}
+              className="block dark:hidden"
+              src="/static/images/logo-light.png"
+              alt={`${siteMetadata.headerTitle} logo light`}
+            />
+            <Image
+              width={200}
+              height={200}
+              className="hidden dark:block"
+              src="/static/images/logo-dark.png"
+              alt={`${siteMetadata.headerTitle} logo dark`}
+            />
+          </div>
         </div>
       </Link>
       <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
@@ -40,7 +49,7 @@ const Header = () => {
               </Link>
             ))}
         </div>
-        <SearchButton />
+        {/* <SearchButton /> */}
         <ThemeSwitch />
         <MobileNav />
       </div>
