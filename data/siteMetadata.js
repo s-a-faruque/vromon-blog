@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Travel Tech Blog',
+  title: 'Dream Destinations',
   author: 'Safique Ahmed Faruque',
-  headerTitle: 'Vromon - Travel Tech',
-  description: 'A blog created for Travellers',
+  headerTitle: 'Vromon',
+  description: 'A curated list of travel destinations',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
