@@ -1,0 +1,52 @@
+---
+title: La Dolce Vita
+date: '2023-09-05'
+tags: ['europe', 'italy', 'history', 'images']
+draft: false
+layout: PostBanner
+images: ['/static/images/santorini.jpg']
+summary: Indulge in the historic streets of Rome, the romantic canals of Venice, the breathtaking Amalfi Coast, and the cultural masterpieces of Florence.
+---
+
+Indulge in the historic streets of Rome, the romantic canals of Venice, the breathtaking Amalfi Coast, and the cultural masterpieces of Florence. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.
+
+Features images served using `next/image` component. The locally stored images are located in a folder with the following path: `/static/images/italy/[filename].jpg`
+
+Since we are using mdx, we can create a simple responsive flexbox grid to display our images with a few tailwind css classes.
+
+---
+
+# Gallery
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Rome](/static/images/italy/rome.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Venice](/static/images/italy/venice.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Amalfi](/static/images/italy/amalfi.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Florence](/static/images/italy/florence.jpg)
+  </div>
+</div>
+
+# Implementation
+
+```js
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Rome](/static/images/italy/rome.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Venice](/static/images/italy/venice.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Amalfi](/static/images/italy/amalfi.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Florence](/static/images/italy/florence.jpg)
+  </div>
+</div>

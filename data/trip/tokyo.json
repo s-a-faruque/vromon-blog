@@ -1,0 +1,106 @@
+{
+  "tripTitle": "Weekend in Tokyo",
+  "destination": "Tokyo, Japan",
+  "startDate": "2026-10-16",
+  "endDate": "2026-10-18",
+  "totalBudget": 80000,
+  "currency": "JPY",
+  "days": [
+    {
+      "dayNumber": 1,
+      "date": "2026-10-16",
+      "theme": "Neon Lights & Shinjuku Views",
+      "accommodation": {
+        "name": "Hotel Gracery Shinjuku",
+        "address": "1-19-1 Kabukicho, Shinjuku City, Tokyo 160-0021"
+      },
+      "activities": [
+        {
+          "time": "15:00",
+          "activityName": "Check-in at Hotel",
+          "type": "lodging",
+          "notes": "Look out for the giant Godzilla head on the terrace",
+          "subActivities": [
+            {
+              "time": "15:15",
+              "activityName": "Unpack and refresh",
+              "type": "logistics"
+            },
+            {
+              "time": "16:00",
+              "activityName": "Pick up Pocket Wi-Fi",
+              "type": "logistics",
+              "notes": "Counter near the lobby entrance"
+            }
+          ]
+        },
+        {
+          "time": "18:30",
+          "activityName": "Tokyo Metropolitan Government Building Observation Deck",
+          "type": "sightseeing",
+          "location": {
+            "name": "TMG Building",
+            "address": "2-8-1 Nishishinjuku, Shinjuku City, Tokyo 163-8001",
+            "coordinates": {
+              "latitude": 35.6896,
+              "longitude": 139.6917
+            }
+          },
+          "cost": 0.0
+        }
+      ]
+    },
+    {
+      "dayNumber": 2,
+      "date": "2026-10-17",
+      "theme": "Tradition & Pop Culture",
+      "accommodation": {
+        "name": "Hotel Gracery Shinjuku",
+        "address": "1-19-1 Kabukicho, Shinjuku City, Tokyo 160-0021"
+      },
+      "activities": [
+        {
+          "time": "09:00",
+          "activityName": "Explore Senso-ji Temple",
+          "type": "sightseeing",
+          "location": {
+            "name": "Senso-ji",
+            "address": "2-3-1 Asakusa, Taito City, Tokyo 111-0032",
+            "coordinates": {
+              "latitude": 35.7148,
+              "longitude": 139.7967
+            }
+          },
+          "cost": 0.0,
+          "subActivities": [
+            {
+              "time": "09:30",
+              "activityName": "Walk down Nakamise Shopping Street",
+              "type": "sightseeing"
+            },
+            {
+              "time": "10:15",
+              "activityName": "Try Melonpan snack",
+              "type": "food",
+              "notes": "Asakusa Kagetsudo main shop"
+            }
+          ]
+        },
+        {
+          "time": "13:00",
+          "activityName": "Sushi Lunch at Tsukiji Outer Market",
+          "type": "food",
+          "location": {
+            "name": "Tsukiji Outer Market",
+            "address": "4-16-2 Tsukiji, Chuo City, Tokyo 104-0045",
+            "coordinates": {
+              "latitude": 35.6655,
+              "longitude": 139.7705
+            }
+          },
+          "cost": 3500.0
+        }
+      ]
+    }
+  ]
+}

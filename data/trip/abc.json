@@ -1,0 +1,98 @@
+{
+  "tripTitle": "Weekend in Paris",
+  "destination": "Paris, France",
+  "startDate": "2026-07-10",
+  "endDate": "2026-07-12",
+  "totalBudget": 500,
+  "currency": "EUR",
+  "days": [
+    {
+      "dayNumber": 1,
+      "date": "2026-07-10",
+      "theme": "Arrival & Iconic Landmarks",
+      "accommodation": {
+        "name": "Hotel Les Deux Gares",
+        "address": "2 Rue des Deux Gares, 75010 Paris"
+      },
+      "activities": [
+        {
+          "time": "14:30",
+          "activityName": "Check-in at Hotel",
+          "type": "lodging",
+          "notes": "Booking confirmation: #XYZ-12345",
+          "subActivities": [
+            {
+              "time": "14:45",
+              "activityName": "Drop off luggage",
+              "type": "logistics"
+            },
+            {
+              "time": "15:15",
+              "activityName": "Order coffee",
+              "type": "food",
+              "notes": "Try the hotel lounge espresso"
+            }
+          ]
+        },
+        {
+          "time": "18:00",
+          "activityName": "Eiffel Tower Sunset Viewing",
+          "type": "sightseeing",
+          "location": {
+            "name": "Champ de Mars",
+            "address": "5 Avenue Anatole France, 75007 Paris",
+            "coordinates": {
+              "latitude": 48.8584,
+              "longitude": 2.2945
+            }
+          },
+          "cost": 28.5
+        }
+      ]
+    },
+    {
+      "dayNumber": 2,
+      "date": "2026-07-10",
+      "theme": "Arrival & Iconic Landmarks",
+      "accommodation": {
+        "name": "Hotel Les Deux Gares",
+        "address": "2 Rue des Deux Gares, 75010 Paris"
+      },
+      "activities": [
+        {
+          "time": "14:30",
+          "activityName": "Check-in at Hotel",
+          "type": "lodging",
+          "notes": "Booking confirmation: #XYZ-12345",
+          "subActivities": [
+            {
+              "time": "14:45",
+              "activityName": "Drop off luggage",
+              "type": "logistics"
+            },
+            {
+              "time": "15:15",
+              "activityName": "Order coffee",
+              "type": "food",
+              "notes": "Try the hotel lounge espresso"
+            }
+          ]
+        },
+        {
+          "time": "18:00",
+          "activityName": "Eiffel Tower Sunset Viewing",
+          "type": "sightseeing",
+          "location": {
+            "name": "Champ de Mars",
+            "address": "5 Avenue Anatole France, 75007 Paris",
+            "coordinates": {
+              "latitude": 48.8584,
+              "longitude": 2.2945
+            }
+          },
+          "cost": 28.5
+        }
+      ]
+    }
+  ]
+}

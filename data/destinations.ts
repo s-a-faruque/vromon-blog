@@ -186,4 +186,22 @@ export const destinations: Destination[] = [
       'https://commons.wikimedia.org/wiki/File:Northern_part_of_Lake_Wanaka_with_surrounding_mountains,_New_Zealand.jpg',
     wikiUrl: 'https://commons.wikimedia.org/wiki/Category:Lake_W%C4%81naka',
   },
+  {
+    slug: 'rome',
+    title: 'Rome, Italy',
+    location: 'Lazio, Central Italy, Italy',
+    description:
+      'An open-air museum where millennia of epic history, world-class art, and vibrant street life collide.',
+    overview:
+      'Rome, the Eternal City, stands as a monumental testament to Western civilization. Spanning nearly three thousand years of history, it seamlessly weaves majestic ancient ruins like the Colosseum and Roman Forum with masterpiece-filled Renaissance churches, baroque fountains, and a passionate, modern culinary culture.',
+    highlights: [
+      'Step back in time inside the mighty amphitheater of the Colosseum',
+      'Toss a coin into the breathtaking Trevi Fountain to ensure your return to the city',
+      "Marvel at Michelangelo's ceiling fresco within the Sistine Chapel in Vatican City",
+    ],
+    image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5',
+    imageCredit: 'Alvesgaspar / Wikimedia Commons',
+    imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome-Central_View.jpg',
+    wikiUrl: 'https://en.wikipedia.org/wiki/Rome',
+  },
 ]

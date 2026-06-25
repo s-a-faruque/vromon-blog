@@ -3,10 +3,12 @@
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { formatDate } from 'pliny/utils/formatDate'
-import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Blog } from 'contentlayer/generated'
+import { CoreContent, coreContent } from 'pliny/utils/contentlayer'
+import type { Blog, Authors } from 'contentlayer/generated'
+import { allAuthors } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
+import Image from '@/components/Image'
 import siteMetadata from '@/data/siteMetadata'
 
 interface PaginationProps {
@@ -117,29 +119,76 @@ export default function ListLayout({
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((post) => {
-            const { path, date, title, summary, tags } = post
+            const { path, date, title, summary, tags, images, authors } = post
+            const thumbnail = images && images[0]
+            const authorList = authors || ['default']
+            const authorDetails = authorList.map((author) => {
+              const authorResults = allAuthors.find((p) => p.slug === author)
+              return coreContent(authorResults as Authors)
+            })
             return (
               <li key={path} className="py-4">
-                <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                  <dl>
-                    <dt className="sr-only">Published on</dt>
-                    <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                    </dd>
-                  </dl>
-                  <div className="space-y-3 xl:col-span-3">
-                    <div>
-                      <h3 className="text-2xl leading-8 font-bold tracking-tight">
-                        <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
-                          {title}
+                <article className="space-y-2">
+                  <div className="flex flex-col gap-4 md:flex-row">
+                    {thumbnail && (
+                      <div className="relative h-32 w-full flex-shrink-0 md:w-32">
+                        <Link href={`/${path}`}>
+                          <Image
+                            src={thumbnail}
+                            alt={title}
+                            fill
+                            className="rounded-lg object-cover"
+                          />
                         </Link>
-                      </h3>
-                      <div className="flex flex-wrap">
-                        {tags?.map((tag) => <Tag key={tag} text={tag} />)}
                       </div>
-                    </div>
-                    <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                      {summary}
+                    )}
+                    <div className="flex-grow">
+                      <dl className="mb-2">
+                        <dt className="sr-only">Published on</dt>
+                        <dd className="flex flex-col gap-2 text-sm text-gray-500 dark:text-gray-400">
+                          <time dateTime={date} suppressHydrationWarning>
+                            {formatDate(date, siteMetadata.locale)}
+                          </time>
+                          {authorDetails.length > 0 && (
+                            <div className="flex items-center gap-2">
+                              <span>by</span>
+                              <div className="flex items-center gap-2">
+                                {authorDetails.map((author, idx) => (
+                                  <div key={author.slug} className="flex items-center gap-1">
+                                    {author.avatar && (
+                                      <div className="relative h-5 w-5 flex-shrink-0">
+                                        <Image
+                                          src={author.avatar}
+                                          alt={author.name}
+                                          fill
+                                          className="rounded-full object-cover"
+                                        />
+                                      </div>
+                                    )}
+                                    <span>{author.name}</span>
+                                    {idx < authorDetails.length - 1 && <span>,</span>}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </dd>
+                      </dl>
+                      <div className="space-y-3">
+                        <div>
+                          <h3 className="text-2xl leading-8 font-bold tracking-tight">
+                            <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
+                              {title}
+                            </Link>
+                          </h3>
+                          <div className="flex flex-wrap">
+                            {tags?.map((tag) => <Tag key={tag} text={tag} />)}
+                          </div>
+                        </div>
+                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                          {summary}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </article>

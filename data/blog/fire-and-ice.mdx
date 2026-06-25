@@ -1,0 +1,53 @@
+---
+title: Fire and Ice
+date: '2023-06-20'
+tags: ['travel', 'iceland', 'nature', 'images']
+draft: false
+layout: PostBanner
+images: ['/static/images/iceland.jpg']
+summary: Explore Iceland's dramatic landscapes, featuring cascading waterfalls, massive glaciers, black sand beaches, and otherworldly volcanic fields. Perfect for responsive photo grids.
+---
+
+Explore Iceland's dramatic landscapes, featuring cascading waterfalls, massive glaciers, black sand beaches, and otherworldly volcanic fields. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.
+
+Features images served using `next/image` component. The locally stored images are located in a folder with the following path: `/static/images/iceland/[filename].jpg`
+
+Since we are using mdx, we can create a simple responsive flexbox grid to display our images with a few tailwind css classes.
+
+---
+
+# Gallery
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Waterfall](/static/images/iceland/waterfall.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Glacier](/static/images/iceland/glacier.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Northern Lights](/static/images/iceland/aurora.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Black Beach](/static/images/iceland/beach.jpg)
+  </div>
+</div>
+
+# Implementation
+
+```js
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Waterfall](/static/images/iceland/waterfall.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Glacier](/static/images/iceland/glacier.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Northern Lights](/static/images/iceland/aurora.jpg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Black Beach](/static/images/iceland/beach.jpg)
+  </div>
+</div>
+```

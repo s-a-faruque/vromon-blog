@@ -1,4 +1,5 @@
 import PageHeader from '@/components/PageHeader'
+import { notFound } from 'next/navigation'
 
 type Location = {
   name: string
@@ -41,103 +42,115 @@ type Itinerary = {
   days: Day[]
 }
 
-const itinerary: Itinerary = {
-  tripTitle: 'Weekend in Paris',
-  destination: 'Paris, France',
-  startDate: '2026-07-10',
-  endDate: '2026-07-12',
-  totalBudget: 500,
-  currency: 'EUR',
-  days: [
-    {
-      dayNumber: 1,
-      date: '2026-07-10',
-      theme: 'Arrival & Iconic Landmarks',
-      accommodation: {
-        name: 'Hotel Les Deux Gares',
-        address: '2 Rue des Deux Gares, 75010 Paris',
-      },
-      activities: [
-        {
-          time: '14:30',
-          activityName: 'Check-in at Hotel',
-          type: 'lodging',
-          notes: 'Booking confirmation: #XYZ-12345',
-          subActivities: [
-            {
-              time: '14:45',
-              activityName: 'Drop off luggage',
-              type: 'logistics',
-            },
-            {
-              time: '15:15',
-              activityName: 'Order coffee',
-              type: 'food',
-              notes: 'Try the hotel lounge espresso',
-            },
-          ],
-        },
-        {
-          time: '18:00',
-          activityName: 'Eiffel Tower Sunset Viewing',
-          type: 'sightseeing',
-          location: {
-            name: 'Champ de Mars',
-            address: '5 Avenue Anatole France, 75007 Paris',
-            coordinates: {
-              latitude: 48.8584,
-              longitude: 2.2945,
-            },
-          },
-          cost: 28.5,
-        },
-      ],
-    },
-    {
-      dayNumber: 2,
-      date: '2026-07-10',
-      theme: 'Arrival & Iconic Landmarks',
-      accommodation: {
-        name: 'Hotel Les Deux Gares',
-        address: '2 Rue des Deux Gares, 75010 Paris',
-      },
-      activities: [
-        {
-          time: '14:30',
-          activityName: 'Check-in at Hotel',
-          type: 'lodging',
-          notes: 'Booking confirmation: #XYZ-12345',
-          subActivities: [
-            {
-              time: '14:45',
-              activityName: 'Drop off luggage',
-              type: 'logistics',
-            },
-            {
-              time: '15:15',
-              activityName: 'Order coffee',
-              type: 'food',
-              notes: 'Try the hotel lounge espresso',
-            },
-          ],
-        },
-        {
-          time: '18:00',
-          activityName: 'Eiffel Tower Sunset Viewing',
-          type: 'sightseeing',
-          location: {
-            name: 'Champ de Mars',
-            address: '5 Avenue Anatole France, 75007 Paris',
-            coordinates: {
-              latitude: 48.8584,
-              longitude: 2.2945,
-            },
-          },
-          cost: 28.5,
-        },
-      ],
-    },
-  ],
+// const itinerary: Itinerary = {
+//   tripTitle: 'Weekend in Paris',
+//   destination: 'Paris, France',
+//   startDate: '2026-07-10',
+//   endDate: '2026-07-12',
+//   totalBudget: 500,
+//   currency: 'EUR',
+//   days: [
+//     {
+//       dayNumber: 1,
+//       date: '2026-07-10',
+//       theme: 'Arrival & Iconic Landmarks',
+//       accommodation: {
+//         name: 'Hotel Les Deux Gares',
+//         address: '2 Rue des Deux Gares, 75010 Paris',
+//       },
+//       activities: [
+//         {
+//           time: '14:30',
+//           activityName: 'Check-in at Hotel',
+//           type: 'lodging',
+//           notes: 'Booking confirmation: #XYZ-12345',
+//           subActivities: [
+//             {
+//               time: '14:45',
+//               activityName: 'Drop off luggage',
+//               type: 'logistics',
+//             },
+//             {
+//               time: '15:15',
+//               activityName: 'Order coffee',
+//               type: 'food',
+//               notes: 'Try the hotel lounge espresso',
+//             },
+//           ],
+//         },
+//         {
+//           time: '18:00',
+//           activityName: 'Eiffel Tower Sunset Viewing',
+//           type: 'sightseeing',
+//           location: {
+//             name: 'Champ de Mars',
+//             address: '5 Avenue Anatole France, 75007 Paris',
+//             coordinates: {
+//               latitude: 48.8584,
+//               longitude: 2.2945,
+//             },
+//           },
+//           cost: 28.5,
+//         },
+//       ],
+//     },
+//     {
+//       dayNumber: 2,
+//       date: '2026-07-10',
+//       theme: 'Arrival & Iconic Landmarks',
+//       accommodation: {
+//         name: 'Hotel Les Deux Gares',
+//         address: '2 Rue des Deux Gares, 75010 Paris',
+//       },
+//       activities: [
+//         {
+//           time: '14:30',
+//           activityName: 'Check-in at Hotel',
+//           type: 'lodging',
+//           notes: 'Booking confirmation: #XYZ-12345',
+//           subActivities: [
+//             {
+//               time: '14:45',
+//               activityName: 'Drop off luggage',
+//               type: 'logistics',
+//             },
+//             {
+//               time: '15:15',
+//               activityName: 'Order coffee',
+//               type: 'food',
+//               notes: 'Try the hotel lounge espresso',
+//             },
+//           ],
+//         },
+//         {
+//           time: '18:00',
+//           activityName: 'Eiffel Tower Sunset Viewing',
+//           type: 'sightseeing',
+//           location: {
+//             name: 'Champ de Mars',
+//             address: '5 Avenue Anatole France, 75007 Paris',
+//             coordinates: {
+//               latitude: 48.8584,
+//               longitude: 2.2945,
+//             },
+//           },
+//           cost: 28.5,
+//         },
+//       ],
+//     },
+//   ],
+// }
+
+async function getItinerary(slug: string): Promise<Itinerary> {
+  try {
+    // Rename the destructuring or the variable to avoid the 'module' keyword
+    const itineraryData = await import(`/data/trip/${slug}.json`)
+    const itinerary: Itinerary = itineraryData.default
+    return itinerary
+  } catch (error) {
+    console.error(`Failed to load itinerary for slug: ${slug}`, error)
+    return notFound()
+  }
 }
 
 function ActivitySummary({ activity }: { activity: Activity }) {
@@ -160,9 +173,7 @@ function ActivitySummary({ activity }: { activity: Activity }) {
           ) : null}
           {activity.notes ? <p className="mt-1 text-sm text-gray-600">{activity.notes}</p> : null}
           {typeof activity.cost === 'number' ? (
-            <p className="mt-1 text-sm text-gray-600">
-              Cost: {activity.cost.toFixed(2)} {itinerary.currency}
-            </p>
+            <p className="mt-1 text-sm text-gray-600">Cost: {activity.cost.toFixed(2)}</p>
           ) : null}
         </div>
       </div>
@@ -178,7 +189,11 @@ function ActivitySummary({ activity }: { activity: Activity }) {
   )
 }
 
-export default function Example() {
+export default async function Example(props: { params: Promise<{ slug: string[] }> }) {
+  const params = await props.params
+  const slug = decodeURI(params.slug.join('/'))
+  // Usage:
+  const itinerary = await getItinerary(slug)
   return (
     <>
       <PageHeader />
@@ -195,7 +210,7 @@ export default function Example() {
         <dl className="divide-y divide-gray-100 bg-white">
           {itinerary.days.map((day) => (
             <div key={day.dayNumber} className="px-6 py-6 sm:grid sm:grid-cols-5 sm:gap-4">
-              <dt className="flex items-center text-sm font-semibold text-gray-900">
+              <dt className="flex items-center rounded-lg bg-slate-100 p-2 text-sm font-semibold text-gray-900">
                 <div className="h-3.5 w-3.5 rounded-full bg-sky-400" />
                 <p className="ml-3">Day {day.dayNumber}</p>
               </dt>
