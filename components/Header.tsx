@@ -8,7 +8,7 @@ import ThemeSwitch from './ThemeSwitch'
 import Image from './Image'
 
 const Header = () => {
-  let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between'
+  let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between border-b'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
   }
