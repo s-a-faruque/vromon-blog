@@ -6,6 +6,7 @@ import type { Blog } from 'contentlayer/generated'
 import DestinationGrid from '@/components/DestinationGrid'
 import BlogList from '@/components/BlogList'
 import BlogGrid from '@/components/BlogGrid'
+import Hero from '@/components/HeroBanner'
 
 interface MainProps {
   posts: CoreContent<Blog>[]
@@ -17,6 +18,7 @@ export default function Home({ posts }: MainProps) {
   return (
     <>
       <section>
+        <Hero></Hero>
         <DestinationGrid searchQuery={searchQuery} />
         {/* <BlogList /> */}
         <BlogGrid posts={posts} />
