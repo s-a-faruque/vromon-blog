@@ -36,18 +36,7 @@ export default function HeroBanner() {
           <div className="relative z-30 flex h-full flex-col items-center justify-center px-6 text-center sm:px-10">
             <div className="max-w-3xl space-y-6">
               <div className="space-y-2">
-                <h1
-                  className="text-4xl font-medium tracking-tight text-white drop-shadow-xl sm:text-5xl lg:text-4xl"
-                  style={{
-                    textShadow: `
-                      -1px -1px 0 rgba(0,0,0,0.5),  
-                       1px -1px 0 rgba(0,0,0,0.5),
-                      -1px  1px 0 rgba(0,0,0,0.5),
-                       1px  1px 0 rgba(0,0,0,0.5),
-                       0px  4px 10px rgba(0,0,0,0.6)
-                    `,
-                  }}
-                >
+                <h1 className="text-4xl font-medium tracking-tight text-white drop-shadow-xl sm:text-5xl lg:text-4xl">
                   Inspire Your Next Adventure
                 </h1>
               </div>
