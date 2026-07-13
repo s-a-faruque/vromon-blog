@@ -18,7 +18,7 @@ export default function Home({ posts }: MainProps) {
   return (
     <>
       <section>
-        <Hero></Hero>
+        <Hero />
         <DestinationGrid searchQuery={searchQuery} />
         {/* <BlogList /> */}
         <BlogGrid posts={posts} />
