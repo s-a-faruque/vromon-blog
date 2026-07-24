@@ -26,6 +26,7 @@ export const destinations: Destination[] = [
       'Sip coffee in Saint-Germain-des-Prés',
       'Watch the Eiffel Tower sparkle after dark',
     ],
+    thumbnail: 'paris.jpg',
     image:
       'https://www.parisdiscoveryguide.com/image-files/x1500-terrass-hotel-eiffel-tower-night-1x1.jpg.pagespeed.ic.aNYvUZHMJ8.jpg',
     imageCredit: 'Paris Discovery Guide',
@@ -74,6 +75,7 @@ export const destinations: Destination[] = [
       'Wander the Gion historic district',
       'Experience cherry blossoms in spring or maple leaves in autumn',
     ],
+    thumbnail: 'kyoto.jpg',
     image:
       'https://www.travelcaffeine.com/wp-content/uploads/2014/12/Kiyomizudera-Temple-Sunset-Wooden-Pavilion-Overlook-copy.jpg',
     imageCredit: 'Travel Caffeine',
@@ -124,6 +126,7 @@ export const destinations: Destination[] = [
       'Catch sunrise on Mount Batur',
       'Relax on beaches in Seminyak and Canggu',
     ],
+    thumbnail: 'bali.jpg',
     image:
       'https://cdn.prod.website-files.com/66fab24d6dde4d79b3b50865/67de721a9834260c076e97be_Tegallalang%20Rice%20Terraces.webp',
     imageCredit: '30 Sundays Club',
@@ -142,7 +145,6 @@ export const destinations: Destination[] = [
       'Explore museums on Museum Mile',
       'Experience vibrant neighborhoods across Manhattan and Brooklyn',
     ],
-    thumbnail: 'newyork.jpg',
     image:
       'https://roamingtheamericas.com/wp-content/uploads/2023/07/Brooklyn-Bridge-Park-NYC-W-6467-1024x683.jpg',
     imageCredit: 'Roaming the Americas',
@@ -180,6 +182,7 @@ export const destinations: Destination[] = [
       'Photograph the resilient and world-famous \"That Wanaka Tree\" rising from the water',
       'Explore the alpine trails, glaciers, and river valleys of Mount Aspiring National Park',
     ],
+    thumbnail: 'auckland.jpg',
     image: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Wanaka.jpg',
     imageCredit: 'Michal Klajban / Wikimedia Commons',
     imageCreditUrl:

@@ -15,10 +15,10 @@ export default function CardWithFooter({ destination }: CardWithFooterProps) {
         className="flex h-full flex-col no-underline focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:outline-none dark:focus-visible:ring-offset-slate-950"
         aria-label={`View details for ${destination.title}`}
       >
-        <div className="relative h-56 overflow-hidden bg-slate-100">
+        <div className="relative h-96 overflow-hidden bg-slate-100">
           <Image
             alt={destination.title}
-            src={destination.thumbnail ? `/static/images/${destination.thumbnail}` : destination.image}
+            src={destination.thumbnail ? `/static/images/destinations/${destination.thumbnail}` : destination.image}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             width={720}
             height={400}
