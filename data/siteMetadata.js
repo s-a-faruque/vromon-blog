@@ -26,7 +26,7 @@ const siteMetadata = {
   // set to true if you want a navbar fixed to the top
   stickyNav: true,
   displayTripPlanner: true,
-  tripPlannerURL: 'https://chatbot-two-neon-69.vercel.app/',
+  tripPlannerURL: 'https://plan.vromon.org/',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.

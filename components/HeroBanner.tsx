@@ -21,9 +21,9 @@ export default function HeroBanner() {
           {/* 2. Gradient Overlay (Ensures text stays readable) */}
           <div
             className="absolute inset-0 z-10"
-            style={{
-              backgroundImage: `linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(139, 92, 246, 0.7) 100%)`,
-            }}
+            // style={{
+            //   backgroundImage: `linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(139, 92, 246, 0) 100%)`,
+            // }}
           />
 
           {/* Decorative Blur Orbs */}
