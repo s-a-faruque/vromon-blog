@@ -12,9 +12,11 @@ export default function Page() {
 
   return (
     <>
-      <AuthorLayout content={mainContent}>
-        <MDXLayoutRenderer code={author.body.code} />
-      </AuthorLayout>
+      <div className="gemini-bg-animated">
+        <AuthorLayout content={mainContent}>
+          <MDXLayoutRenderer code={author.body.code} />
+        </AuthorLayout>
+      </div>
     </>
   )
 }

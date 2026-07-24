@@ -1,0 +1,33 @@
+.gemini-bg-animated {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #eff0f5;
+  overflow: hidden;
+}
+
+/* Glowing Layer */
+.gemini-bg-animated::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(66, 133, 244, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(157, 78, 221, 0.35) 0%, transparent 40%),
+    radial-gradient(circle at 50% 70%, rgba(232, 113, 172, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 75% 80%, rgba(26, 115, 232, 0.3) 0%, transparent 40%);
+  filter: blur(60px); /* Creates the ultra-smooth glow effect */
+  animation: floatGlow 14s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.08);
+  }
+  100% {
+    transform: rotate(-5deg) scale(1);
+  }
+}
